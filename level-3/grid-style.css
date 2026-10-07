@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Base Styles & Reset
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Component Aesthetics */
+header, nav, main, aside, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+header { background-color: #3a0ca3; color: white; grid-area: header; }
+nav { background-color: #4361ee; grid-area: nav; }
+nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
+main { background-color: #f8f9fa; border: 2px solid #e9ecef; grid-area: main; }
+.sidebar-left { background-color: #e2eafc; grid-area: asideLeft; }
+.sidebar-right { background-color: #d7e3fc; grid-area: asideRight; }
+footer { background-color: #212529; color: white; grid-area: footer; }
+
+/* Wrapper unstyled for Grid setup to allow semantic body configuration */
+.layout-wrapper {
+    display: contents; /* Delivers structural children up directly to body parent context */
+}
+
+/* ==========================================================================
+   CSS Grid Layout Configuration & Breakpoints
+   ========================================================================== */
+
+/* Mobile Stack Layout Profile */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "asideLeft"
+        "asideRight"
+        "footer";
+}
+
+/* Tablet Layout Profile */
+@media (min-width: 600px) and (max-width: 1023px) {
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main main"
+            "asideLeft asideRight"
+            "footer footer";
+    }
+}
+
+/* Desktop Layout Profile */
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: 20% 60% 20%;
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "asideLeft main asideRight"
+            "footer footer footer";
+    }
+}

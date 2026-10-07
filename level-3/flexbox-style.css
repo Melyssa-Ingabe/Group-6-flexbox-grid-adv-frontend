@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Base Styles & Reset
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Base Component Aesthetics */
+header, nav, main, aside, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+header { background-color: #3a0ca3; color: white; }
+nav { background-color: #4361ee; }
+nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
+main { background-color: #f8f9fa; border: 2px solid #e9ecef; }
+.sidebar-left { background-color: #e2eafc; }
+.sidebar-right { background-color: #d7e3fc; }
+footer { background-color: #212529; color: white; margin-top: auto; }
+
+/* ==========================================================================
+   Flexbox Layout Configuration
+   ========================================================================== */
+.layout-wrapper {
+    display: flex;
+    flex-flow: row wrap; /* Allows wrapping on narrower tablet/mobile profiles */
+    flex: 1;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (Mobile First Approach)
+   ========================================================================== */
+
+/* Mobile Portrait Profile (Default Stacked Setup) */
+.main-content { flex: 1 1 100%; order: 1; }
+.sidebar-left { flex: 1 1 100%; order: 2; }
+.sidebar-right { flex: 1 1 100%; order: 3; }
+
+/* Tablet Landscape Profile */
+@media (min-width: 600px) and (max-width: 1023px) {
+    .main-content {
+        flex: 1 1 100%;
+        order: 1;
+    }
+    /* Sidebars break out below content to form equal width columns side-by-side */
+    .sidebar {
+        flex: 1 1 50%;
+    }
+    .sidebar-left { order: 2; }
+    .sidebar-right { order: 3; }
+}
+
+/* Desktop Wide Viewport Profile */
+@media (min-width: 1024px) {
+    .main-content {
+        flex: 0 0 60%;
+        order: 2; /* Centered visually between structural elements */
+    }
+    .sidebar-left {
+        flex: 0 0 20%;
+        order: 1; /* Pushed to the left wall */
+    }
+    .sidebar-right {
+        flex: 0 0 20%;
+        order: 3; /* Pushed to the right wall */
+    }
+}
