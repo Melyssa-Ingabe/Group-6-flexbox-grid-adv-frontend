@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holy Grail Layout (Grid)</title>
+  <link rel="stylesheet" href="grid-style.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <a class="logo" href="#">Gridwork</a>
+      <details class="user-menu">
+        <summary>Amina K.</summary>
+        <ul><li><a href="#">Profile</a></li><li><a href="#">Settings</a></li><li><a href="#">Sign out</a></li></ul>
+      </details>
+    </header>
+
+    <nav class="site-nav" aria-label="Main">
+      <a href="#">Home</a><a href="#">Articles</a><a href="#">Projects</a><a href="#">About</a><a href="#">Contact</a>
+    </nav>
+
+    <div class="page">
+      <aside class="sidebar sidebar--left" aria-label="Sections">
+        <button class="sidebar__toggle" data-collapse="left" aria-expanded="true" aria-label="Toggle left sidebar">&#9664;</button>
+        <div class="sidebar__body"><h2>Sections</h2><ul><li><a href="#">Basics</a></li><li><a href="#">Layouts</a></li><li><a href="#">Responsive</a></li></ul></div>
+      </aside>
+
+      <main class="main">
+        <h1>Latest lessons</h1>
+        <div class="cards-wrap"><div class="cards">
+          <article class="card"><h3>Card 1</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 2</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 3</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 4</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 5</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 6</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 7</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 8</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+          <article class="card"><h3>Card 9</h3><p>Cards reflow to fit the space the main column actually has.</p></article>
+        </div></div>
+      </main>
+
+      <aside class="sidebar sidebar--right" aria-label="Related">
+        <button class="sidebar__toggle" data-collapse="right" aria-expanded="true" aria-label="Toggle right sidebar">&#9654;</button>
+        <div class="sidebar__body"><h2>Related</h2><ul><li><a href="#">Flexbox Froggy</a></li><li><a href="#">Grid Garden</a></li><li><a href="#">MDN Layout</a></li></ul></div>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <section><h2>Learn</h2><a href="#">Flexbox</a><a href="#">Grid</a></section>
+      <section><h2>Community</h2><a href="#">Forum</a><a href="#">Events</a></section>
+      <section><h2>Company</h2><a href="#">About</a><a href="#">Privacy</a></section>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
