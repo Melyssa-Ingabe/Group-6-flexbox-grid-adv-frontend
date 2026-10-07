@@ -1,0 +1,8 @@
+document.querySelectorAll('[data-collapse]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const collapsed = document.querySelector('.site')
+      .classList.toggle('collapsed-' + btn.dataset.collapse);
+    btn.setAttribute('aria-expanded', String(!collapsed));
+  });
+});
+ 
